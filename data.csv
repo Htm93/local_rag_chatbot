@@ -1,0 +1,19 @@
+Title,data,Date
+"Thông tin chung về Báo cáo","Báo cáo tìm hiểu công nghệ LLM, Vector Database và Kiến trúc RAG. Người thực hiện: Hoàng Tuấn Minh. Người hướng dẫn: Vũ Ngọc Thiện. Ngày: 20/07/2026. Mục tiêu: tìm hiểu các khái niệm kỹ thuật cốt lõi xoay quanh LLM và RAG, từ LLM API, Hugging Face, Vector DB đến LangChain và LangGraph.",2026-07-20
+"Tổng quan về Python và LLM API","Mã nguồn Python đóng vai trò là Client trung gian với 4 bước: 1. Tiếp nhận prompt. 2. Đóng gói dữ liệu (Serialization) sang chuẩn JSON. 3. Gọi mạng HTTP đính kèm API Key để xác thực. 4. Trích xuất dữ liệu (Parsing) lọc bỏ siêu dữ liệu để hiển thị văn bản kết quả.",2026-07-20
+"Đặc điểm của OpenAI API","OpenAI API là mô hình ngôn ngữ dạng Dịch vụ (MaaS) mã nguồn đóng. Hoạt động Cloud-based trên máy chủ OpenAI. Trả phí Pay-as-you-go theo token. Lập trình viên dễ dàng tích hợp qua HTTP mà không cần đầu tư máy chủ GPU phần cứng.",2026-07-20
+"Điểm nổi bật của Llama 3","Llama 3 do Meta phát triển là mô hình mã nguồn mở. Cho phép chạy cục bộ (on-premise) đảm bảo bảo mật dữ liệu tuyệt đối (Data Privacy). Hỗ trợ tinh chỉnh sâu (Fine-tuning) bằng LoRA/QLoRA. Chi phí chuyển từ trả tiền API sang việc doanh nghiệp phải tự đầu tư máy chủ GPU cấu hình cao.",2026-07-20
+"Khái niệm Embeddings và Hugging Face","Embeddings chuyển đổi ngôn ngữ tự nhiên thành vector ma trận số thực đa chiều. Đo lường ngữ nghĩa bằng Cosine Similarity (bỏ qua độ dài, đo lường góc). Hugging Face là trung tâm lưu trữ mô hình mã nguồn mở. Cung cấp thư viện transformers và sentence-transformers để tạo vector và tìm kiếm ngữ nghĩa.",2026-07-20
+"Vector Database là gì?","Vector Database lưu trữ ma trận số thực đa chiều, tìm kiếm xấp xỉ tốc độ cao (ANN) bằng thuật toán HNSW (chia tầng Skip List và mạng lưới Small World). Hỗ trợ tính Cosine Similarity, Dot Product, Euclidean Distance trực tiếp.",2026-07-20
+"Vector DB so với Cơ sở dữ liệu truyền thống","CSDL truyền thống (MySQL) dùng khớp từ khóa chính xác (Keyword matching), không hiểu được từ đồng nghĩa (ví dụ: xe hơi và ô tô). Vector DB tìm kiếm bằng độ tương đồng không gian (Semantic similarity), không cần khớp mặt chữ mà vẫn tìm ra khái niệm liên quan.",2026-07-20
+"Vai trò của LangChain","LangChain là framework bộ điều phối (orchestrator) giải quyết sự phân mảnh. Nó cung cấp các module (Document Loaders, VectorStores, Chains) để ghép nối Vector DB và LLM thành một đường ống (pipeline) tự động chỉ với vài dòng mã.",2026-07-20
+"Kiến trúc RAG khắc phục ảo giác","RAG (Tạo sinh Tăng cường Truy xuất) khắc phục hiện tượng ảo giác (hallucination) của LLM bằng cách không bắt LLM tự nhớ. Khi có câu hỏi, hệ thống trích xuất tài liệu từ DB, nhúng vào prompt ép LLM trả lời theo ngữ cảnh. Gồm 4 bước: Xử lý tài liệu, Tạo nhúng, Truy xuất, Tạo sinh.",2026-07-20
+"Sự vượt trội của LangGraph so với LangChain","LangGraph mở rộng từ LangChain, hoạt động dựa trên lý thuyết đồ thị (Nodes và Edges). Khắc phục luồng tuyến tính 1 chiều (DAG) của LangChain bằng cách hỗ trợ Vòng lặp (Cycles) và Quản lý trạng thái (Stateful). Giúp tạo AI Agents có khả năng tự động kiểm tra lỗi và quay vòng tìm lại tài liệu nếu cần.",2026-07-20
+
+
+fast api -> build UI thay vì terminal
+UI: nút import data (docs, excel)
+    Không sử dụng chroma -> postgre sql
+Xử lý phần chatbot lưu context của 5 prompt gần nhất
+chạy 2 model: 1 generative 1 embedding
+huggingface xử lý text -> voice (speech) (input voice output voice)
